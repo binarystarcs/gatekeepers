@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://components/TruthTable.gd" type="Script" id=1]
+
+[node name="TruthTable" type="Node2D"]
+position = Vector2( 720, 24 )
+script = ExtResource( 1 )
+
+[node name="TableContainer" type="HBoxContainer" parent="."]
+margin_top = 1.90735e-06
+margin_right = 400.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 400, 200 )
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InputsContainer" type="VBoxContainer" parent="TableContainer"]
+margin_right = 47.0
+margin_bottom = 200.0
+
+[node name="InputsLabel" type="Label" parent="TableContainer/InputsContainer"]
+margin_right = 47.0
+margin_bottom = 14.0
+text = "INPUTS"
+align = 1
+
+[node name="InputsTable" type="GridContainer" parent="TableContainer/InputsContainer"]
+margin_top = 18.0
+margin_right = 47.0
+margin_bottom = 18.0
+
+[node name="ConnectorsContainer" type="VBoxContainer" parent="TableContainer"]
+margin_left = 67.0
+margin_right = 107.0
+margin_bottom = 200.0
+
+[node name="ConnectorsLabel" type="Label" parent="TableContainer/ConnectorsContainer"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "GATES"
+align = 1
+
+[node name="ConnectorsTable" type="GridContainer" parent="TableContainer/ConnectorsContainer"]
+margin_top = 18.0
+margin_right = 40.0
+margin_bottom = 18.0
+
+[node name="OutputsContainer" type="VBoxContainer" parent="TableContainer"]
+margin_left = 127.0
+margin_right = 187.0
+margin_bottom = 200.0
+
+[node name="OutputsLabel" type="Label" parent="TableContainer/OutputsContainer"]
+margin_right = 60.0
+margin_bottom = 14.0
+text = "OUTPUTS"
+align = 1
+
+[node name="OutputsTable" type="GridContainer" parent="TableContainer/OutputsContainer"]
+margin_top = 18.0
+margin_right = 60.0
+margin_bottom = 18.0

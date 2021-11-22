@@ -1,0 +1,76 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/Roboto-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://levels/Level1.gd" type="Script" id=2]
+[ext_resource path="res://components/NotGate.tscn" type="PackedScene" id=3]
+[ext_resource path="res://levels/LevelSelector.tscn" type="PackedScene" id=4]
+[ext_resource path="res://components/Switch.tscn" type="PackedScene" id=5]
+[ext_resource path="res://components/Bulb.tscn" type="PackedScene" id=6]
+[ext_resource path="res://components/AndGate.tscn" type="PackedScene" id=7]
+[ext_resource path="res://components/OrGate.tscn" type="PackedScene" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 1 )
+
+[node name="Level7" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="LevelSelector" parent="." instance=ExtResource( 4 )]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 56.0
+margin_bottom = 56.0
+
+[node name="AndGate" parent="." instance=ExtResource( 7 )]
+position = Vector2( 504, 120 )
+scale = Vector2( 0.18, 0.18 )
+
+[node name="Bulb" parent="." instance=ExtResource( 6 )]
+position = Vector2( 944, 464 )
+scale = Vector2( 0.7, 0.7 )
+
+[node name="Switch" parent="." instance=ExtResource( 5 )]
+position = Vector2( 136, 232 )
+
+[node name="Switch2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 136, 384 )
+identifier = "B"
+
+[node name="Switch3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 136, 544 )
+identifier = "C"
+
+[node name="OrGate" parent="." instance=ExtResource( 8 )]
+position = Vector2( 368, 40 )
+scale = Vector2( 0.18, 0.18 )
+
+[node name="OrGate2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 368, 120 )
+scale = Vector2( 0.18, 0.18 )
+
+[node name="NotGate" parent="." instance=ExtResource( 3 )]
+position = Vector2( 640, 40 )
+scale = Vector2( 0.18, 0.18 )
+
+[node name="NotGate2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 640, 120 )
+scale = Vector2( 0.18, 0.18 )
+
+[node name="AndGate2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 504, 40 )
+scale = Vector2( 0.18, 0.18 )
+
+[node name="ToggleTruth" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 840.0
+margin_top = 568.0
+margin_right = 1015.0
+margin_bottom = 612.0
+custom_fonts/font = SubResource( 1 )
+text = "Truth Table"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="ToggleTruth" to="." method="_on_ToggleTruth_pressed"]
